@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="temperature_change_template">%1$s° ----&gt; %2$s°</string>
+    <string name="temperature_template">%s°</string>
+</resources>
