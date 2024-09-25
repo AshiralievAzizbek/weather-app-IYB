@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
     implementation(libs.surf.easy.adapter)
+    implementation(libs.surf.recycler.decorator)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

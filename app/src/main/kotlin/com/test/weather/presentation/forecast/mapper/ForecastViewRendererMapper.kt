@@ -8,9 +8,9 @@ import com.test.weather.com.test.weather.data.model.forecast.Forecast
 fun Forecast.toForecastViewRendererList(
     resourceManager: ResourceManager
 ): List<ForecastViewRenderer> {
-    val forecastList = dateList?.map { date ->
-        val start = minTemperatureList?.first() ?: 0.0
-        val end = maxTemperatureList?.first() ?: 0.0
+    val forecastList = dateList?.mapIndexed { index, date ->
+        val start = minTemperatureList?.getOrNull(index) ?: 0.0
+        val end = maxTemperatureList?.getOrNull(index) ?: 0.0
         ForecastViewRenderer(
             date = date.orEmpty(),
             temperature = resourceManager.getString(

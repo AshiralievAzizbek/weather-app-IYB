@@ -41,7 +41,9 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 retrofit-kotlinx-serialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0"
 kotlinx-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
 result = "com.github.kittinunf.result:result-jvm:5.2.1"
+
 surf-easy-adapter = { group = "ru.surfstudio.android", name = "easyadapter", version.ref = "easy-adapter" }
+surf-recycler-decorator = "ru.surfstudio.android:recycler-decorator:1.0.1"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
