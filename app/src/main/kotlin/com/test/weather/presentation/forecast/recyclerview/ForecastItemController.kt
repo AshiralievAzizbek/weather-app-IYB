@@ -10,7 +10,7 @@ import com.test.weather.databinding.ForecastItemViewHolderBinding as ViewBinding
 
 class ForecastItemController(
     private val layoutInflater: LayoutInflater,
-    private val onClick: () -> Unit
+    private val onClick: (String) -> Unit
 ) : BindableItemController<ForecastViewRenderer, ViewHolder>() {
 
     inner class ViewHolder(private val binding: ViewBinding) :
@@ -18,7 +18,7 @@ class ForecastItemController(
         override fun bind(data: ForecastViewRenderer) = with(binding) {
             tvDate.text = data.date
             tvTemperature.text = data.temperature
-            root.setOnClickListener { onClick.invoke() }
+            root.setOnClickListener { onClick.invoke(data.date) }
         }
     }
 
