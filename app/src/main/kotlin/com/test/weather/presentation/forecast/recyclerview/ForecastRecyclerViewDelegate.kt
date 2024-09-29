@@ -2,8 +2,7 @@ package com.test.weather.com.test.weather.presentation.forecast.recyclerview
 
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
-import com.test.weather.com.test.weather.presentation.forecast.delegate.ForecastItemController
-import com.test.weather.com.test.weather.presentation.forecast.model.ForecastViewRenderer
+import com.test.weather.com.test.weather.presentation.forecast.model.ForecastDayViewRenderer
 import ru.surfstudio.android.easyadapter.EasyAdapter
 import ru.surfstudio.android.recycler.decorator.Decorator
 
@@ -13,7 +12,7 @@ class ForecastRecyclerViewDelegate(
     onClick: (date: String) -> Unit
 ) {
 
-    private val easyAdapter = EasyAdapter()
+    private val easyAdapter = EasyAdapter().apply { setHasStableIds(true) }
     private val controller = ForecastItemController(layoutInflater, onClick)
 
     init {
@@ -25,7 +24,7 @@ class ForecastRecyclerViewDelegate(
         view.addItemDecoration(decor)
     }
 
-    fun setItems(items: List<ForecastViewRenderer>) {
-        easyAdapter.setData(items, controller)
+    fun setItems(items: List<ForecastDayViewRenderer>, maxDays: Int) {
+        easyAdapter.setData(items.take(maxDays), controller)
     }
 }

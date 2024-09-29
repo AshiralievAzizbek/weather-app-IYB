@@ -1,4 +1,4 @@
-package com.test.weather.com.test.weather.data.model.forecast
+package com.test.weather.com.test.weather.data.remote.model
 
 
 import kotlinx.serialization.SerialName
@@ -10,6 +10,6 @@ data class ForecastResponse(
     @SerialName("current")
     val current: Current?,
 
-    @SerialName("daily")
-    val forecast: Forecast
+    @SerialName("forecast")
+    val forecast: Forecast?,
 )

@@ -1,7 +1,7 @@
-package com.test.weather.com.test.weather.data.network
+package com.test.weather.com.test.weather.data.remote.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.test.weather.com.test.weather.data.network.client.ForecastRestClient
+import com.test.weather.com.test.weather.data.remote.network.client.ForecastRestClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,7 +35,8 @@ object NetworkModule {
 
         return Retrofit.Builder()
             .client(client)
-            .baseUrl("https://api.open-meteo.com/")
+            .baseUrl("https://api.weatherapi.com/")
+            .addCallAdapterFactory(ResultAdapter.Factory())
             .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
             .build()
     }

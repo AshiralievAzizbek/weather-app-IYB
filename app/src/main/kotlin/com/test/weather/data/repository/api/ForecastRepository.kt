@@ -1,10 +1,11 @@
 package com.test.weather.com.test.weather.data.repository.api
 
-import com.github.kittinunf.result.Result
-import com.test.weather.com.test.weather.data.model.forecast.ForecastResponse
-import retrofit2.HttpException
+import com.test.weather.com.test.weather.data.local.database.model.ForecastEntity
+import kotlinx.coroutines.flow.Flow
 
 interface ForecastRepository {
 
-    suspend fun loadForecast(): Result<ForecastResponse, HttpException>
+    val forecastFlow: Flow<ForecastEntity?>
+
+    suspend fun loadForecast()
 }

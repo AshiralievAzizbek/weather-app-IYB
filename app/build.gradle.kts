@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.hilt.plugin)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.kapt)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -50,6 +51,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.cicerone)
     implementation(libs.dagger.hilt)
     implementation(libs.okHttp)
     implementation(libs.okHttp.logging)
@@ -57,6 +59,8 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
     implementation(libs.surf.easy.adapter)
     implementation(libs.surf.recycler.decorator)
     implementation(libs.material)
@@ -65,6 +69,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     kapt(libs.dagger.hilt.kapt)
+    kapt(libs.room.compiler)
 }
 
 kapt {

@@ -1,8 +1,9 @@
 package com.test.weather.com.test.weather.presentation.forecast
 
-import com.test.weather.com.test.weather.presentation.forecast.model.ForecastViewRenderer
+import com.test.weather.com.test.weather.presentation.forecast.model.ForecastDayViewRenderer
 
 data class ForecastViewState(
-    val forecastList: List<ForecastViewRenderer> = emptyList(),
-    val currentTemperature: String = ""
+    val forecastList: List<ForecastDayViewRenderer> = emptyList(),
+    val currentTemperature: String = "",
+    val maxDays: Int = 3
 )
